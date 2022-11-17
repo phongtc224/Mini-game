@@ -1,0 +1,101 @@
+@import "~antd/dist/antd.css";
+@import "./assets/style/colors";
+
+@import "./assets/style/screen";
+
+.tag {
+    padding: 1.5rem;
+    padding-right: 0;
+    height: 100vh;
+}
+
+.body {
+    padding: 1.5rem;
+    height: 100vh;
+
+    &-content {
+        padding: 1rem 0;
+        height: 100%;
+        background-color: $color_dark;
+        border-radius: 10px;
+
+        &__title {
+            margin: 3.5rem 0;
+            font-size: 2.5rem;
+            color: $color_white;
+        }
+
+        &__btn {
+            display: block;
+            padding: 1rem 2rem;
+            margin: 1rem 0;
+            text-align: center;
+            color: $color_white;
+            background-color: $color_dark;
+            border: 1px solid $color_white;
+            border-radius: 10px;
+            cursor: pointer;
+
+            transition: all $time_transition;
+
+            &:hover {
+                color: $color_white;
+                background-color: $color_orange;
+                border-color: $color_orange;
+
+                transition: all $time_transition;
+            }
+        }
+    }
+}
+
+.game-content {
+    height: 75vh;
+    padding: 0 1.5rem;
+}
+
+@media #{$mobile} {
+    .tag {
+        padding: 0.5rem;
+        height: 10vh;
+    }
+
+    .body {
+        padding: 0.5rem;
+        padding-top: 0;
+        height: 90vh;
+
+        &-content {
+            &__title {
+                font-size: 2rem;
+            }
+
+            &__btn {
+                display: block;
+                padding: 1rem 2rem;
+                margin: 1rem 0;
+                text-align: center;
+                color: $color_white;
+                background-color: $color_dark;
+                border: 1px solid $color_white;
+                border-radius: 10px;
+                cursor: pointer;
+
+                transition: all $time_transition;
+
+                &:hover {
+                    color: $color_white;
+                    background-color: $color_orange;
+                    border-color: $color_orange;
+
+                    transition: all $time_transition;
+                }
+            }
+        }
+    }
+
+    .game-content {
+        height: 67.5vh;
+        padding: 0 1.5rem;
+    }
+}

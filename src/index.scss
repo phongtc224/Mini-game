@@ -1,0 +1,19 @@
+@font-face {
+  src: url(./assets/font/Comfortaa-Regular.ttf);
+  font-family: Comfortaa;
+}
+body {
+  margin: 0;
+  font-family: Comfortaa, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+code {
+  font-family: Comfortaa, "Courier New", monospace;
+}

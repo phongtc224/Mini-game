@@ -1,0 +1,50 @@
+@import "../../../../assets/style/colors";
+@import "../../../../assets/style/global";
+@import "../../../../assets/style/screen";
+
+.nav-game {
+    &__item {
+        margin: 0.75rem 0;
+        padding: 0.75rem;
+        font-size: 1rem;
+        text-align: center;
+        color: $color_white;
+        border: 1px solid $color_white;
+        border-radius: 10px;
+
+        transition: all $time_transition;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            border-color: $color_orange;
+            background-color: $color_orange;
+            transition: all $time_transition;
+        }
+    }
+}
+
+@media #{$mobile} {
+    .nav-game {
+        &__item {
+            position: fixed;
+            top: 11.1rem;
+            right: 1rem;
+            font-size: 1rem;
+            text-align: center;
+            color: $color_white;
+            border: 1px solid $color_white;
+            border-radius: 10px;
+
+            transition: all $time_transition;
+            cursor: pointer;
+
+            &:hover,
+            &:focus {
+                border-color: $color_orange;
+                background-color: $color_orange;
+                transition: all $time_transition;
+            }
+        }
+    }
+}

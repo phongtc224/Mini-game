@@ -1,0 +1,38 @@
+@import "../../../../assets/style/colors";
+@import "../../../../assets/style/global";
+
+.menu {
+    margin: 2rem 0;
+
+    &-desktop {
+        &__item {
+            display: block;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border: 1px solid $color_white;
+            border-radius: 10px;
+            color: $color_white;
+            background-color: $color_dark;
+            transition: all $time_transition;
+
+            &--image {
+                width: 3.5vw;
+                height: 3.5vw;
+                object-fit: contain;
+                border-radius: 10px;
+            }
+            &--content {
+                margin: 0 0.75rem;
+            }
+
+            &:hover,
+            &:focus,
+            &.active {
+                color: $color_white;
+                border-color: $color_orange;
+                background-color: $color_orange;
+                transition: all $time_transition;
+            }
+        }
+    }
+}

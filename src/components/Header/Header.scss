@@ -1,0 +1,61 @@
+@import "../../assets/style/colors";
+@import "../../assets/style/screen";
+
+.header {
+    margin: 1rem;
+    padding: 0 0.5rem;
+    height: 10vh;
+
+    &__title {
+        font-size: 1.5rem;
+        color: $color_white;
+    }
+
+    &__game-mode {
+        padding: 1rem;
+        font-size: 1rem;
+        font-style: italic;
+        color: $color_white;
+        // background-color: $color_orange;
+        border-radius: 10px;
+    }
+
+    &__btn-restart {
+        margin: 0 0.75rem;
+        padding: 0.75rem;
+        font-size: 1.25rem;
+        color: $color_white;
+        border: 1px solid $color_white;
+        border-radius: 10px;
+
+        transition: all $time_transition;
+        cursor: pointer;
+
+        &:focus,
+        &:hover {
+            color: $color_white;
+            background-color: $color_orange;
+            border-color: $color_orange;
+
+            transition: all $time_transition;
+        }
+    }
+
+    &__clock {
+        display: inline-block;
+        width: 25vh;
+        padding: 0.4rem;
+        font-size: 1.25rem;
+        text-align: center;
+        letter-spacing: 4px;
+        color: $color_white;
+        border: 1px solid $color_white;
+        border-radius: 10px;
+    }
+}
+
+@media #{$mobile} {
+    .header {
+        margin: 2rem 1rem;
+    }
+}

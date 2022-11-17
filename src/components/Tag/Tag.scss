@@ -1,0 +1,59 @@
+@import "./../../assets/style/colors";
+@import "./../../assets/style/screen";
+
+.ant-btn {
+    color: $color_orange;
+    border-color: $color_orange;
+    &:hover {
+        color: $color_white;
+        border-color: $color_orange;
+        background-color: $color_orange;
+    }
+}
+
+.tag {
+    &-content {
+        padding: 1rem 0;
+        height: 100%;
+        background-color: $color_dark;
+        border-radius: 10px;
+    }
+    &__logo {
+        margin: 1rem;
+        &--content {
+            padding: 1rem 0;
+            color: $color_white;
+            background-color: $color_orange;
+            border-radius: 10px;
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+    }
+}
+
+@media #{$mobile} {
+    .tag {
+        &-content {
+            padding: 0;
+            background-color: white;
+            height: 100%;
+        }
+
+        &__logo {
+            margin: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &--content {
+                height: 100%;
+                font-size: 1.5rem;
+                font-weight: 700;
+                letter-spacing: 2px;
+                text-align: center;
+            }
+        }
+    }
+}

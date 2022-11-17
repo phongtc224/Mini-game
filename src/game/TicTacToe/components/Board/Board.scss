@@ -1,0 +1,121 @@
+@import "../../../../assets/style/colors";
+@import "../../../../assets/style/screen";
+
+:root {
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size) * 0.9);
+}
+
+.board {
+    width: 100%;
+    height: 75vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 2px solid $color_white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    &:first-child,
+    &:nth-child(2),
+    &:nth-child(3) {
+        border-top: none;
+    }
+
+    &:nth-child(3n + 1) {
+        border-left: none;
+    }
+
+    &:nth-child(3n + 3) {
+        border-right: none;
+    }
+
+    &:last-child,
+    &:nth-child(8),
+    &:nth-child(7) {
+        border-bottom: none;
+    }
+
+    &.X,
+    &.O {
+        cursor: not-allowed;
+    }
+
+    &.X::before,
+    &.X::after,
+    &.O::before {
+        background-color: $color_white;
+    }
+}
+
+.board.X .cell:not(.X):not(.O):hover::before,
+.board.X .cell:not(.X):not(.O):hover::after,
+.board.O .cell:not(.X):not(.O):hover::before {
+    background-color: lightgrey;
+}
+
+.cell.X::before,
+.cell.X::after,
+.board.X .cell:not(.X):not(.O):hover::before,
+.board.X .cell:not(.X):not(.O):hover::after {
+    content: "";
+    position: absolute;
+    width: calc(var(--mark-size) * 0.15);
+    height: var(--mark-size);
+}
+
+.cell.X::before,
+.board.X .cell:not(.X):not(.O):hover::before {
+    transform: rotate(45deg);
+}
+
+.cell.X::after,
+.board.X .cell:not(.X):not(.O):hover::after {
+    transform: rotate(-45deg);
+}
+
+.cell.O::before,
+.cell.O::after,
+.board.O .cell:not(.X):not(.O):hover::before,
+.board.O .cell:not(.X):not(.O):hover::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.cell.O::before,
+.board.O .cell:not(.X):not(.O):hover::before {
+    width: var(--mark-size);
+    height: var(--mark-size);
+}
+
+.cell.O::after,
+.board.O .cell:not(.X):not(.O):hover::after {
+    width: calc(var(--mark-size) * 0.7);
+    height: calc(var(--mark-size) * 0.7);
+    background-color: $color_dark;
+}
+
+@media #{$mobile} {
+    .board {
+        width: 100%;
+        height: 67.5vh;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: repeat(3, auto);
+    }
+}

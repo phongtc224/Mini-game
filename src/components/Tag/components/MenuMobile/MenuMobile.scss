@@ -1,0 +1,80 @@
+@import "../../../../assets/style/colors";
+@import "../../../../assets/style/global";
+@import "../../../../assets/style/screen";
+
+@media #{$mobile} {
+    .ant-drawer-content-wrapper {
+        position: fixed;
+        top: 10vh;
+        left: 0vh !important;
+        height: 50% !important;
+        border-radius: 10px;
+    }
+
+    .ant-drawer-content {
+        background-color: $color_dark;
+        border: 2px solid $color_white;
+        border-radius: 10px;
+    }
+
+    .ant-drawer-close {
+        color: $color_white;
+    }
+
+    .ant-drawer-body {
+        margin: 1rem 0;
+    }
+
+    .menu {
+        margin: 3rem 0;
+
+        &-mobile {
+            &__btn {
+                position: relative;
+                padding: 0 0.75rem;
+                top: 1.25rem;
+                left: 0.75rem;
+                font-size: 1.25rem;
+                color: $color_white;
+                border-color: $color_white;
+                background-color: $color_dark;
+                border-radius: 5px;
+                z-index: 100;
+                &:hover,
+                &:focus,
+                &.active {
+                    color: $color_white;
+                }
+            }
+            &__item {
+                display: block;
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+                border: 1px solid $color_white;
+                border-radius: 10px;
+                color: $color_white;
+                background-color: $color_dark;
+                transition: all $time_transition;
+
+                &--image {
+                    width: 7vw;
+                    height: 7vw;
+                    object-fit: contain;
+                }
+                &--content {
+                    margin: 0 0.5rem;
+                    font-size: 0.75rem;
+                }
+
+                &:hover,
+                &:focus,
+                &.active {
+                    color: $color_white;
+                    border-color: $color_orange;
+                    background-color: $color_orange;
+                    transition: all $time_transition;
+                }
+            }
+        }
+    }
+}

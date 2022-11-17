@@ -1,0 +1,49 @@
+@import "../../../../assets/style/colors";
+@import "../../../../assets/style/global";
+@import "../../../../assets/style/screen";
+
+.board-minesweeper {
+    margin: 0.75rem 0;
+    padding: 1.5rem;
+    border: 1px solid $color_white;
+    border-radius: 10px;
+
+    &__cell {
+        display: flex;
+        position: relative;
+        height: 5vh;
+        width: 5vh;
+        color: $color_white;
+        background-color: black;
+        border: 1px solid $color_white;
+        text-align: center;
+
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        cursor: pointer;
+
+        &.mine {
+            background-color: $color_orange;
+        }
+
+        &.active {
+            background-color: $color_dark;
+            cursor: no-drop;
+        }
+
+        &.flap {
+            background-color: none;
+        }
+    }
+}
+
+@media #{$mobile} {
+    .board-minesweeper {
+        padding: 7.5rem 0.5rem;
+        &__cell {
+            height: 3vh;
+            width: 3vh;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+@import "../../assets/style/colors";
+
+.list-action {
+    &__item {
+        display: block;
+        padding: 1rem 2rem;
+        margin: 1rem 0;
+        text-align: center;
+        color: $color_white;
+        background-color: $color_dark;
+        border: 1px solid $color_white;
+        border-radius: 10px;
+
+        transition: all $time_transition;
+
+        &:hover {
+            color: $color_white;
+            background-color: $color_orange;
+            border-color: $color_orange;
+
+            transition: all $time_transition;
+        }
+    }
+}

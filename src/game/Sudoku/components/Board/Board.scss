@@ -1,0 +1,85 @@
+@import "../../../../assets/style/colors";
+@import "../../../../assets/style/global";
+@import "../../../../assets/style/screen";
+
+.col-cell-sudoku {
+    display: block;
+    flex: 0 0 11.11111111%;
+    max-width: 11.11111111%;
+}
+
+.board-sudoku {
+    margin: 0.75rem 0;
+    padding: 2rem 8rem;
+    border: 1px solid $color_white;
+    border-radius: 10px;
+
+    & > div {
+        border: 1px solid $color_white;
+
+        &:not(:nth-child(n + 10)) {
+            border-top: 3px solid $color_orange;
+        }
+
+        &:nth-child(n + 73),
+        &:nth-child(27n),
+        &:nth-child(27n -1),
+        &:nth-child(27n -2),
+        &:nth-child(27n -3),
+        &:nth-child(27n -4),
+        &:nth-child(27n -5),
+        &:nth-child(27n -6),
+        &:nth-child(27n -7),
+        &:nth-child(27n -8) {
+            border-bottom: 3px solid $color_orange;
+        }
+
+        &:nth-child(9n + 1) {
+            border-left: 3px solid $color_orange;
+        }
+
+        &:nth-child(9n + 9),
+        &:nth-child(3n + 3) {
+            border-right: 3px solid $color_orange;
+        }
+    }
+
+    &__cell {
+        display: flex;
+        position: relative;
+        height: 6vh;
+        width: 100%;
+        color: $color_white;
+        background-color: black;
+        border: none;
+        text-align: center;
+
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        cursor: pointer;
+
+        &.focus {
+            background-color: $color_orange;
+        }
+
+        &.disabled {
+            background-color: $color_dark;
+            cursor: no-drop;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+@media #{$mobile} {
+    .board-sudoku {
+        padding: 6.5rem 1rem;
+
+        &__cell {
+            height: 4vh;
+        }
+    }
+}
